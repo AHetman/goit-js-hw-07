@@ -4,10 +4,11 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const colorSelect = document.querySelector(".widget");
-const colorValue = document.querySelector(".color");
-colorSelect.addEventListener("click", onColorChangeBtn);
+const changeColorButton = document.querySelector(".change-color");
+const colorSpan = document.querySelector(".color");
+changeColorButton.addEventListener("click", onColorChangeBtn);
 function onColorChangeBtn() {
-  colorValue.textContent = getRandomHexColor();
-  colorSelect.parentNode.style.backgroundColor = colorValue.textContent;
+  const color = getRandomHexColor();
+  document.body.style.backgroundColor = color; // Переконання, що це елемент <body>
+  colorSpan.textContent = color;
 }
